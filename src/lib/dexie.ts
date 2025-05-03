@@ -1,4 +1,5 @@
 import Dexie, { Table } from "dexie";
+import { v4 as uuidv4 } from "uuid";
 
 export interface DEX_Message {
   id: string;
@@ -39,7 +40,8 @@ class ChatDB extends Dexie {
   }
 
   async createThread(title: string) {
-    const id = crypto.randomUUID();
+    const id = uuidv4();
+    
 
     await this.threads.add({
       id,
@@ -58,7 +60,7 @@ class ChatDB extends Dexie {
   async createMessage(
     message: Pick<DEX_Message, "role" | "content" | "threadId" | "thought">
   ) {
-    const messageId = crypto.randomUUID();
+    const messageId = uuidv4();
 
     await this.transaction("rw", [this.messages, this.threads], async () => {
       await this.messages.add({
