@@ -1,6 +1,6 @@
 import { useLiveQuery } from "dexie-react-hooks";
 import { Loader2, MenuIcon, MicIcon, MessageCircleIcon } from "lucide-react";
-import ollama from "ollama";
+import ollama from "ollama/browser";
 import { useLayoutEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { ChatMessage } from "~/components/ChatMessage";
