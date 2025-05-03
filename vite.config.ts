@@ -5,8 +5,8 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: "0.0.0.0", // Mengizinkan akses dari perangkat lain di jaringan lokal
-    port: 3000, // Port yang ingin digunakan
+    host: "*",
+    port: 4000,
   },
   resolve: {
     alias: {
