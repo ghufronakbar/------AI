@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: "test.lestarikehati.com",
-    port: 4000,
+    // port: 4000,
   },
   resolve: {
     alias: {
